@@ -64,9 +64,8 @@ class AuthViewModel(
             "Введите имя пользователя"
         } else null
 
-        // Валидация почты/телефона
-        val contactError = if (current.contact.isBlank()) {
-            "Введите почту или телефон"
+        val contactError = if (!current.contact.contains("@") || !current.contact.contains(".")) {
+            "Введите корректный email"
         } else null
 
         // Валидация пароля
